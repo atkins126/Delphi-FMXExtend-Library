@@ -1,4 +1,41 @@
+﻿/// <summary>
+/// ***************************************************************************
+///
+/// Delphi FMX Extend Library
+///
+/// Copyright 2021-2024 Patrick Prémartin under AGPL 3.0 license.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+/// DEALINGS IN THE SOFTWARE.
+///
+/// ***************************************************************************
+///
+/// Set of FireMonkey components for Delphi multi-platform projects.
+///
+/// ***************************************************************************
+///
+/// Author(s) :
+///      Patrick PREMARTIN
+///
+/// Site :
+///      https://fmxextend.developpeur-pascal.fr/
+///
+/// Project site :
+///      https://github.com/DeveloppeurPascal/Delphi-FMXExtend-Library
+///
+/// ***************************************************************************
+/// File last update : 28/05/2024 12:18:50
+/// Signature : 0ef39039f3ebc2171a02148db267248c5682b753
+/// ***************************************************************************
+/// </summary>
+
 package Olf.FMX.Extend;
+
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
@@ -24,17 +61,18 @@ package Olf.FMX.Extend;
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
-{$DESCRIPTION 'Olf Software Delphi FMX Extend Library'}
+{$DESCRIPTION 'Delphi FMX Extend Library from Patrick PREMARTIN'}
 {$IMPLICITBUILD ON}
 
 requires
   rtl,
   fmx,
-  bindengine,
   bindcomp,
-  bindcompfmx;
+  bindcompfmx,
+  bindengine;
 
 contains
-  Olf.FMX.Effects in '..\..\sources\Olf.FMX.Effects.pas';
+  Olf.FMX.Effects in '..\..\src\Olf.FMX.Effects.pas',
+  Olf.FMX.SelectDirectory in '..\..\src\Olf.FMX.SelectDirectory.pas';
 
 end.

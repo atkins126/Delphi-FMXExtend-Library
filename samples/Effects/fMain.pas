@@ -1,13 +1,68 @@
+/// <summary>
+/// ***************************************************************************
+///
+/// Delphi FMX Extend Library
+///
+/// Copyright 2021-2024 Patrick Prémartin under AGPL 3.0 license.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+/// DEALINGS IN THE SOFTWARE.
+///
+/// ***************************************************************************
+///
+/// Set of FireMonkey components for Delphi multi-platform projects.
+///
+/// ***************************************************************************
+///
+/// Author(s) :
+///      Patrick PREMARTIN
+///
+/// Site :
+///      https://fmxextend.developpeur-pascal.fr/
+///
+/// Project site :
+///      https://github.com/DeveloppeurPascal/Delphi-FMXExtend-Library
+///
+/// ***************************************************************************
+/// File last update : 28/05/2024 12:18:50
+/// Signature : 39073437c7f3279d9794bddf1c54a50ed423cc0a
+/// ***************************************************************************
+/// </summary>
+
 unit fMain;
+
 interface
+
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
   System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Layouts,
-  Olf.FMX.Effects, FMX.Effects, FMX.Objects, Data.Bind.EngExt,
-  Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Controls.Presentation,
+  FMX.StdCtrls,
+  FMX.ListBox,
+  FMX.Layouts,
+  Olf.FMX.Effects,
+  FMX.Effects,
+  FMX.Objects,
+  Data.Bind.EngExt,
+  FMX.Bind.DBEngExt,
+  System.Rtti,
+  System.Bindings.Outputs,
+  FMX.Bind.Editors,
   Data.Bind.Components;
+
 type
   TForm1 = class(TForm)
     Image1: TImage;
@@ -35,10 +90,14 @@ type
   public
     { Déclarations publiques }
   end;
+
 var
   Form1: TForm1;
+
 implementation
+
 {$R *.fmx}
+
 procedure TForm1.lbiFlipHorizontalClick(Sender: TObject);
 begin
   if OlfFlipHorizontalEffect1.Enabled then
@@ -49,6 +108,7 @@ begin
     OlfFlipHorizontalEffect1.Enabled := true;
   end;
 end;
+
 procedure TForm1.lbiFlipVerticalClick(Sender: TObject);
 begin
   if OlfFlipVerticalEffect1.Enabled then
@@ -59,10 +119,12 @@ begin
     OlfFlipVerticalEffect1.Enabled := true;
   end;
 end;
+
 procedure TForm1.lbiNoEffectClick(Sender: TObject);
 begin
   StopEffects;
 end;
+
 procedure TForm1.lbiRotateEffectClick(Sender: TObject);
 begin
   if OlfFlipVerticalEffect1.Enabled then
@@ -70,7 +132,7 @@ begin
   else
   begin
     StopEffects;
-    OlfRotateEffect1.Data:=adRotation.Value;
+    OlfRotateEffect1.Data := adRotation.Value;
     OlfRotateEffect1.Enabled := true;
   end;
 end;
@@ -80,7 +142,8 @@ var
   i: integer;
 begin
   for i := 0 to ComponentCount - 1 do
-    if (components[i] is teffect) and ((components[i] as teffect).Enabled) then
-      (components[i] as teffect).Enabled := false;
+    if (Components[i] is teffect) and ((Components[i] as teffect).Enabled) then
+      (Components[i] as teffect).Enabled := false;
 end;
+
 end.
